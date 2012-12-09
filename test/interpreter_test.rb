@@ -65,8 +65,10 @@ class InterpreterTest < Minitest::Unit::TestCase
   end
 
   def test_eval_end_loop_node
-           # so we enter the loop
+           # so we loop twice
     ast = [Mojikun::ThumbsUpNode.new,
+           Mojikun::ThumbsUpNode.new,
+
            Mojikun::LoopNode.new,
 
              # move right once, increment, move left
@@ -76,6 +78,7 @@ class InterpreterTest < Minitest::Unit::TestCase
 
              # decrement so we leave the loop
              Mojikun::ThumbsDownNode.new,
+
            Mojikun::EndLoopNode.new,
 
            # move right so we can see the 1 we did in the loop
@@ -83,7 +86,7 @@ class InterpreterTest < Minitest::Unit::TestCase
           ]
     @interpreter.evaluate(ast)
 
-    assert_equal 1, @interpreter.runtime.current_data
+    assert_equal 2, @interpreter.runtime.current_data
   end
 
   def test_loop_map
