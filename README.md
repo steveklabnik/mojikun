@@ -33,7 +33,7 @@ A `mojikun` binary is provided to let you run programs. There is an examples
 directory which has some examples. Use `mojikun` like any other interpreter:
 
 ```
-mokikun examples/hello.moji
+mojikun examples/hello.moji
 ```
 
 `.moji` is the preferred file ending for Mojikun.
