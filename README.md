@@ -10,8 +10,8 @@ Instructions:
 👎  Decrement the memory cell under the pointer
 💻  Output the character signified by the cell at the pointer
 💾  Input a character and store it in the cell at the pointer
-🔃  Jump past the matching ] if the cell under the pointer is 0
-🔙  Jump back to the matching [ if the cell under the pointer is nonzero
+🔃  Jump past the matching 🔙 if the cell under the pointer is 0
+🔙  Jump back to the matching 🔃 if the cell under the pointer is nonzero
 
 ## Installation
 
@@ -29,7 +29,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+A `mojikun` binary is provided to let you run programs. There is an examples
+directory which has some examples. Use `mojikun` like any other interpreter:
+
+```
+mokikun examples/hello.moji
+```
+
+`.moji` is the preferred file ending for Mojikun.
 
 ## Contributing
 

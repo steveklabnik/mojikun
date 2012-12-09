@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Mojikun::VERSION
   gem.authors       = ["Steve Klabnik"]
   gem.email         = ["steve@steveklabnik.com"]
-  gem.description   = %q{}
-  gem.summary       = %q{}
-  gem.homepage      = ""
+  gem.description   = %q{A simple programming language, using emoji.}
+  gem.summary       = %q{A simple programming language, using emoji.}
+  gem.homepage      = "https://github.com/steveklabnik/mojikun"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
