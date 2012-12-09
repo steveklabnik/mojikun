@@ -1,5 +1,6 @@
-require "mojikun/version"
+require 'mojikun/version'
 
-module Mojikun
-  # Your code goes here...
-end
+require 'mojikun/interpreter'
+require 'mojikun/lexer'
+require 'mojikun/parser'
+require 'mojikun/runtime'

@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'mojikun'
+
+source_code = ARGF.read.chomp
+
+tokens = Mojikun::Lexer.new(source_code).call
+
+ast = Mojikun::Parser.new(tokens).call
+
+runtime = Mojikun::Runtime.new
+interpreter = Mojikun::Interpreter.new(runtime)
+
+interpreter.evaluate(ast)

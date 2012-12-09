@@ -6,7 +6,7 @@ module Mojikun
 
     # omg easiest lexer ever
     def call
-      @source.split
+      @source.split(//)
     end
   end
 end
