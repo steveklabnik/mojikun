@@ -68,7 +68,7 @@ interpreter.evaluate(ast)
 We have a Lexer, Parser, Runtime, and Interpreter. The Lexer turns the stream
 of input into a series of tokens. The Parser takes those tokens and turns them
 into an AST, which is more of a list than a tree, really. We generate a new
-Rumtime, which has all of the internal state we need to make the language work:
+Runtime, which has all of the internal state we need to make the language work:
 the data array, the program counter, etc. Then, the Interpreter takes that
 AST and evaluates it in the context of the Runtime.
 
