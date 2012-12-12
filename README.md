@@ -38,6 +38,51 @@ mojikun examples/hello.moji
 
 `.moji` is the preferred file ending for Mojikun.
 
+## Structure
+
+While Mojikun is a simple language that could be interpreted in a 40ish line
+script, I wanted to make it more like a 'real langauge' that would have all
+of the parts and design that a more full one has. I may use this foundation
+later to build more complex things.
+
+We can see these parts in motion by examining the binary:
+
+```ruby
+$ cat bin/mojikun 
+#!/usr/bin/env ruby
+
+require 'mojikun'
+
+source_code = ARGF.read.chomp
+
+tokens = Mojikun::Lexer.new(source_code).call
+
+ast = Mojikun::Parser.new(tokens).call
+
+runtime = Mojikun::Runtime.new
+interpreter = Mojikun::Interpreter.new(runtime)
+
+interpreter.evaluate(ast)
+```
+
+We have a Lexer, Parser, Runtime, and Interpreter. The Lexer turns the stream
+of input into a series of tokens. The Parser takes those tokens and turns them
+into an AST, which is more of a list than a tree, really. We generate a new
+Rumtime, which has all of the internal state we need to make the language work:
+the data array, the program counter, etc. Then, the Interpreter takes that
+AST and evaluates it in the context of the Runtime.
+
+Pretty simple!
+
+## Testing
+
+Mojikun is fully tested with MiniTest. I actually wrote it in a TDD fashion.
+To run the tests, simply
+
+```
+$ rake test
+```
+
 ## Contributing
 
 1. Fork it
