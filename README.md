@@ -41,7 +41,7 @@ mojikun examples/hello.moji
 ## Structure
 
 While Mojikun is a simple language that could be interpreted in a 40ish line
-script, I wanted to make it more like a 'real langauge' that would have all
+script, I wanted to make it more like a 'real language' that would have all
 of the parts and design that a more full one has. I may use this foundation
 later to build more complex things.
 
